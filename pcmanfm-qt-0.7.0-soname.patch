@@ -1,0 +1,12 @@
+diff -urN pcmanfm-qt-0.7.0/libfm-qt/CMakeLists.txt pcmanfm-qt-0.7.0-patched/libfm-qt/CMakeLists.txt
+--- pcmanfm-qt-0.7.0/libfm-qt/CMakeLists.txt	2014-05-07 18:36:38.000000000 +1100
++++ pcmanfm-qt-0.7.0-patched/libfm-qt/CMakeLists.txt	2014-05-15 02:38:10.271602896 +1100
+@@ -97,7 +97,7 @@
+ # set libtool soname
+ set_target_properties(
+   fm-qt
+-  PROPERTIES SOVERSION "0.0.0"
++  PROPERTIES VERSION "0.0.0" SOVERSION "0"
+ )
+ 
+ # install include header files (FIXME: can we make this cleaner? should dir name be versioned?)

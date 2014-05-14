@@ -1,0 +1,12 @@
+diff -urN pcmanfm-qt-0.7.0/CMakeLists.txt pcmanfm-qt-0.7.0-patched/CMakeLists.txt
+--- pcmanfm-qt-0.7.0/CMakeLists.txt	2014-05-07 18:36:38.000000000 +1100
++++ pcmanfm-qt-0.7.0-patched/CMakeLists.txt	2014-05-15 02:41:54.587238052 +1100
+@@ -45,7 +45,7 @@
+ 
+ if (CMAKE_COMPILER_IS_GNUCXX)
+   # set visibility to hidden to hide symbols, unlesss they're exporeted manually in the code
+-  set(CMAKE_CXX_FLAGS "-fvisibility=hidden -fvisibility-inlines-hidden -fno-exceptions")
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden -fvisibility-inlines-hidden -fno-exceptions")
+ endif()
+ 
+ # Eanble CMake auto-moc support for Qt
