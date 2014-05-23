@@ -5,13 +5,14 @@
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
 Version:	0.7.0
-Release:	2
+Release:	3
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 Patch0:		pcmanfm-qt-0.7.0-soname.patch
 Patch1:		pcmanfm-qt-0.7.0-cxxflags.patch
+Patch2:		pcmanfm-qt-0.7.0-default-background.patch
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	pkgconfig(gio-2.0)
@@ -62,8 +63,7 @@ Development files for PCManFM.
 
 %prep
 %setup -q -c %{name}-%{version}
-%patch0 -p1
-%patch1 -p1
+%apply_patches
 
 %build
 %cmake
