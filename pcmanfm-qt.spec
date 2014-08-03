@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(lxqt-qt5)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires:	qmake5
 
 %description
 File manager for the LXQt desktop.
