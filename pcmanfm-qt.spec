@@ -1,15 +1,21 @@
 %define major 0
-%define libname %mklibname fm-qt %{major}
-%define devname %mklibname fm-qt -d
+%define libname %mklibname fm-qt5 %{major}
+%define devname %mklibname fm-qt5 -d
+%define git 20140803
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.7.0
-Release:	5
+Version:	0.8.0
+%if %git
+Release:	0.%git.1
+Source0:	%{name}-%{git}.tar.xz
+%else
+Release:	1
+Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+%endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
-Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 Patch0:		pcmanfm-qt-0.7.0-soname.patch
 Patch1:		pcmanfm-qt-0.7.0-cxxflags.patch
 Patch2:		pcmanfm-qt-0.7.0-default-background.patch
@@ -20,8 +26,10 @@ BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libfm)
 BuildRequires:	pkgconfig(libmenu-cache)
-BuildRequires:	pkgconfig(lxqt)
+BuildRequires:	pkgconfig(lxqt-qt5)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(Qt5X11Extras)
 
 %description
 File manager for the LXQt desktop.
@@ -42,7 +50,7 @@ Obsoletes:	%{_lib}fm-qt0.0.0 < 0.7.0-2
 PCManFM Qt backend library.
 
 %files -n %{libname}
-%{_libdir}/libfm-qt.so.%{major}*
+%{_libdir}/libfm-qt5.so.%{major}*
 
 #----------------------------------------------------------------------------
 
@@ -55,18 +63,22 @@ Requires:	%{libname} = %{EVRD}
 Development files for PCManFM.
 
 %files -n %{devname}
-%{_libdir}/libfm-qt.so
+%{_libdir}/libfm-qt5.so
 %{_includedir}/libfm-qt
-%{_libdir}/pkgconfig/libfm-qt.pc
+%{_libdir}/pkgconfig/libfm-qt5.pc
 
 #----------------------------------------------------------------------------
 
 %prep
+%if %git
+%setup -q -n %{name}-%{git}
+%else
 %setup -q -c %{name}-%{version}
+%endif
 %apply_patches
 
 %build
-%cmake
+%cmake -DUSE_QT5:BOOL=ON
 %make
 
 %install

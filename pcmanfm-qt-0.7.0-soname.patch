@@ -1,10 +1,9 @@
-diff -urN pcmanfm-qt-0.7.0/libfm-qt/CMakeLists.txt pcmanfm-qt-0.7.0-patched/libfm-qt/CMakeLists.txt
---- pcmanfm-qt-0.7.0/libfm-qt/CMakeLists.txt	2014-05-07 18:36:38.000000000 +1100
-+++ pcmanfm-qt-0.7.0-patched/libfm-qt/CMakeLists.txt	2014-05-15 02:38:10.271602896 +1100
-@@ -97,7 +97,7 @@
+--- pcmanfm-qt-20140803/libfm-qt/CMakeLists.txt.0000~	2014-08-03 19:50:22.961679560 +0200
++++ pcmanfm-qt-20140803/libfm-qt/CMakeLists.txt	2014-08-03 19:50:53.561891554 +0200
+@@ -111,7 +111,7 @@ target_link_libraries(${LIBRARY_NAME}
  # set libtool soname
  set_target_properties(
-   fm-qt
+   ${LIBRARY_NAME}
 -  PROPERTIES SOVERSION "0.0.0"
 +  PROPERTIES VERSION "0.0.0" SOVERSION "0"
  )
