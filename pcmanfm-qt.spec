@@ -20,7 +20,7 @@ Patch0:		pcmanfm-qt-0.7.0-soname.patch
 Patch1:		pcmanfm-qt-0.7.0-cxxflags.patch
 Patch2:		pcmanfm-qt-0.7.0-default-background.patch
 BuildRequires:	cmake
-BuildRequires:	qt4-devel
+BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
