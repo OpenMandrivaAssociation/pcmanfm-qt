@@ -1,7 +1,7 @@
-%define major 0
+%define major 1
 %define libname %mklibname fm-qt5 %{major}
 %define devname %mklibname fm-qt5 -d
-%define git 20140803
+%define git 0
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
@@ -16,8 +16,6 @@ Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
-Patch0:		pcmanfm-qt-0.7.0-soname.patch
-Patch1:		pcmanfm-qt-0.7.0-cxxflags.patch
 Patch2:		pcmanfm-qt-0.7.0-default-background.patch
 BuildRequires:	cmake
 BuildRequires:	qt5-devel
@@ -38,6 +36,9 @@ File manager for the LXQt desktop.
 %files
 %{_bindir}/pcmanfm-qt
 %{_datadir}/applications/*.desktop
+%{_datadir}/libfm-qt
+%{_datadir}/pcmanfm-qt
+%{_mandir}/man1/pcmanfm-qt.1*
 
 #----------------------------------------------------------------------------
 
@@ -74,7 +75,7 @@ Development files for PCManFM.
 %if %git
 %setup -q -n %{name}-%{git}
 %else
-%setup -q -c %{name}-%{version}
+%setup -q
 %endif
 %apply_patches
 
