@@ -5,12 +5,12 @@
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.8.0
+Version:	0.9.0
 %if %git
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	1
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libfm)
 BuildRequires:	pkgconfig(libmenu-cache)
-BuildRequires:	pkgconfig(lxqt-qt5)
+BuildRequires:	pkgconfig(lxqt)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
