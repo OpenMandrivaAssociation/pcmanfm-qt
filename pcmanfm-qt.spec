@@ -1,4 +1,4 @@
-%define major 1
+%define major 2
 %define libname %mklibname fm-qt5 %{major}
 %define devname %mklibname fm-qt5 -d
 %define git 0
@@ -47,6 +47,7 @@ Summary:	PCManFM Qt backend library
 Group:		System/Libraries
 Conflicts:	%{_lib}fm-qt0.0.0 < 0.7.0-2
 Obsoletes:	%{_lib}fm-qt0.0.0 < 0.7.0-2
+Obsoletes:	%{mklibname fm-qt5 1} < 0.9.0
 
 %description -n %{libname}
 PCManFM Qt backend library.
