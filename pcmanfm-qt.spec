@@ -10,7 +10,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -31,6 +31,7 @@ BuildRequires:  pkgconfig(exiv2)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	qmake5
+Suggests:	ark
 
 %description
 File manager for the LXQt desktop.
