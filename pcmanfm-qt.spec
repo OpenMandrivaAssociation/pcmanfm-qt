@@ -10,7 +10,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	3
+Release:	4
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -18,7 +18,6 @@ Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Patch2:		pcmanfm-qt-0.7.0-default-background.patch
 BuildRequires:	cmake
-BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
@@ -27,7 +26,8 @@ BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(lxqt)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
-BuildRequires:  pkgconfig(exiv2)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	qmake5
@@ -84,7 +84,7 @@ Development files for PCManFM.
 %apply_patches
 
 %build
-%cmake -DUSE_QT5:BOOL=ON
+%cmake
 %make
 
 %install
