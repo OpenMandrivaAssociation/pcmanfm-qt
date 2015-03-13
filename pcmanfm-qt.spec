@@ -10,7 +10,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	4
+Release:	5
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -84,7 +84,13 @@ Development files for PCManFM.
 %apply_patches
 
 %build
-%cmake
+# change desktop file name and comment to distinguish it from pcmanfm
+sed -i 's/File Manager/QT File Manager/' pcmanfm/pcmanfm-qt.desktop.in
+ 	
+# change gksu to kdesu as with gksu no icons are shown when running as root
+sed -i 's|gksu %s|%{_libdir}/libexec/kf5/kdesud %s|g' pcmanfm/preferences.ui pcmanfm/settings.cpp pcmanfm/translations/pcmanfm-qt*.ts
+
+%cmake_qt5
 %make
 
 %install
