@@ -32,6 +32,7 @@ BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	qmake5
 Suggests:	ark
+Suggests:	kdesu
 
 %description
 File manager for the LXQt desktop.
