@@ -11,7 +11,7 @@ Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
 Release:	1
-Source0:	https://github.com/lxde/%{name}/archive/%{version}.tar.gz
+Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
@@ -87,7 +87,7 @@ Development files for PCManFM.
 %build
 # change desktop file name and comment to distinguish it from pcmanfm
 sed -i 's/File Manager/QT File Manager/' pcmanfm/pcmanfm-qt.desktop.in
- 	
+
 # change gksu to kdesu as with gksu no icons are shown when running as root
 sed -i 's|gksu %s|%{_libdir}/libexec/kf5/kdesud %s|g' pcmanfm/preferences.ui pcmanfm/settings.cpp pcmanfm/translations/pcmanfm-qt*.ts
 
