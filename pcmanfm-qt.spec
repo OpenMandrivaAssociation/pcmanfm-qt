@@ -10,7 +10,7 @@ Version:	0.10.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -32,7 +32,7 @@ BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	qmake5
 Suggests:	ark
-Suggests:	kdesu
+Suggests:	kde-cli-tools
 
 %description
 File manager for the LXQt desktop.
@@ -89,7 +89,7 @@ Development files for PCManFM.
 sed -i 's/File Manager/QT File Manager/' pcmanfm/pcmanfm-qt.desktop.in
 
 # change gksu to kdesu as with gksu no icons are shown when running as root
-sed -i 's|gksu %s|%{_libdir}/libexec/kf5/kdesud %s|g' pcmanfm/preferences.ui pcmanfm/settings.cpp pcmanfm/translations/pcmanfm-qt*.ts
+sed -i 's|gksu %s|%{_bindir}/kdesu %s|g' pcmanfm/preferences.ui pcmanfm/settings.cpp pcmanfm/translations/pcmanfm-qt*.ts
 
 %cmake_qt5
 %make
