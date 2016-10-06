@@ -2,18 +2,17 @@
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.10.0
+Version:	0.11.1
 %if %git
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	11
+Release:	1
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
-Patch0:		pcmanfm-qt-0.10.0-no-internal-libfm-qt.patch
 Patch2:		pcmanfm-qt-0.7.0-default-background.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
