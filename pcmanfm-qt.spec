@@ -31,6 +31,7 @@ BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(fm-qt)
 BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	qmake5
+BuildRequires:	git-core
 Suggests:	ark
 Suggests:	kde-cli-tools
 
