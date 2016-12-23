@@ -2,7 +2,7 @@
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.11.1
+Version:	0.11.2
 %if %git
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
@@ -29,6 +29,7 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(fm-qt)
+BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	qmake5
 Suggests:	ark
 Suggests:	kde-cli-tools
