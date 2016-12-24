@@ -33,7 +33,7 @@ BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	qmake5
 BuildRequires:	git-core
 Suggests:	ark
-Suggests:	kde-cli-tools
+Suggests:	lxqt-sudo
 
 %description
 File manager for the LXQt desktop.
@@ -57,9 +57,6 @@ File manager for the LXQt desktop.
 %cmake_qt5 -G Ninja
 
 %build
-# change gksu to kdesu as with gksu no icons are shown when running as root
-sed -i 's|gksu %s|%{_bindir}/kdesu %s|g' pcmanfm/preferences.ui pcmanfm/settings.cpp pcmanfm/translations/pcmanfm-qt*.ts
-
 # Need to be in a UTF-8 locale so grep (used by the desktop file
 # translation generator) doesn't scream about translations containing
 # "binary" (non-ascii) characters
