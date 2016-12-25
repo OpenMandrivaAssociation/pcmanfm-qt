@@ -41,7 +41,6 @@ File manager for the LXQt desktop.
 %files
 %{_bindir}/pcmanfm-qt
 %{_datadir}/applications/*.desktop
-%{_datadir}/pcmanfm-qt
 %{_mandir}/man1/pcmanfm-qt.1*
 
 #----------------------------------------------------------------------------
