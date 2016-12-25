@@ -54,7 +54,7 @@ File manager for the LXQt desktop.
 %endif
 %apply_patches
 
-%cmake_qt5 -G Ninja
+%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
 # Need to be in a UTF-8 locale so grep (used by the desktop file
@@ -62,7 +62,7 @@ File manager for the LXQt desktop.
 # "binary" (non-ascii) characters
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja -DPULL_TRANSLATIONS=NO -C build
+%ninja -C build
 
 %install
 # Need to be in a UTF-8 locale so grep (used by the desktop file
