@@ -7,7 +7,7 @@ Version:	0.11.2
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	1
+Release:	2
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -31,7 +31,7 @@ BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(fm-qt)
 BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	qmake5
-BuildRequires:	git-core
+Requires:	lxqt-l10n
 Suggests:	ark
 Suggests:	lxqt-sudo
 
@@ -62,7 +62,7 @@ File manager for the LXQt desktop.
 # "binary" (non-ascii) characters
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
-%ninja -C build
+%ninja -DPULL_TRANSLATIONS=NO -C build
 
 %install
 # Need to be in a UTF-8 locale so grep (used by the desktop file
