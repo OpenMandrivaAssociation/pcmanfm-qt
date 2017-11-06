@@ -1,13 +1,13 @@
---- pcmanfm-qt-0.7.0/pcmanfm/settings.cpp.omv~	2014-05-23 22:01:43.033253357 +0200
-+++ pcmanfm-qt-0.7.0/pcmanfm/settings.cpp	2014-05-23 22:03:12.038529420 +0200
-@@ -155,8 +155,8 @@ bool Settings::loadFile(QString filePath
-   settings.endGroup();
+--- pcmanfm-qt-0.12.0/pcmanfm/settings.cpp.0002~	2017-11-06 21:47:52.159116770 +0100
++++ pcmanfm-qt-0.12.0/pcmanfm/settings.cpp	2017-11-06 22:01:04.702017061 +0100
+@@ -212,8 +212,8 @@ bool Settings::loadFile(QString filePath
+     settings.endGroup();
  
-   settings.beginGroup("Desktop");
--  wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode").toString());
--  wallpaper_ = settings.value("Wallpaper").toString();
-+  wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode", "fit").toString());
-+  wallpaper_ = settings.value("Wallpaper", "/usr/share/wallpapers/mdk/default.png").toString();
-   desktopBgColor_.setNamedColor(settings.value("BgColor", "#000000").toString());
-   desktopFgColor_.setNamedColor(settings.value("FgColor", "#ffffff").toString());
-   desktopShadowColor_.setNamedColor(settings.value("ShadowColor", "#000000").toString());
+     settings.beginGroup("Desktop");
+-    wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode").toString());
+-    wallpaper_ = settings.value("Wallpaper").toString();
++    wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode", "fit").toString());
++    wallpaper_ = settings.value("Wallpaper", "/usr/share/wallpapers/mdk/default.png").toString();
+     lastSlide_ = settings.value("LastSlide").toString();
+     wallpaperDir_ = settings.value("WallpaperDirectory").toString();
+     slideShowInterval_ = settings.value("SlideShowInterval", 0).toInt();
