@@ -1,0 +1,41 @@
+diff -Naur pcmanfm-qt-0.12.0/config/pcmanfm-qt/lxqt/settings.conf.in pcmanfm-qt-0.12.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in
+--- pcmanfm-qt-0.12.0/config/pcmanfm-qt/lxqt/settings.conf.in	2017-10-21 19:42:34.037230096 +0000
++++ pcmanfm-qt-0.12.0.tpg/config/pcmanfm-qt/lxqt/settings.conf.in	2018-01-04 18:22:38.277088424 +0000
+@@ -1,21 +1,24 @@
+ [System]
+ IconThemeName=elementary
+ SuCommand=lxqt-sudo %s
+-TerminalCommand=
+-Archiver=file-roller
++TemplateRunApp=false
++TerminalCommand=qterminal
++Archiver=ark
+ SIUnit=false
+-TerminalDirCommand=xterm
+-TerminalExecCommand=xterm -e %s
++TerminalDirCommand=qterminal
++TerminalExecCommand=qterminal -e %s
+ 
+ [Behavior]
+ BookmarkOpenMethod=0
+ UseTrash=true
+ SingleClick=false
+ ConfirmDelete=true
++ConfirmTrash=true
++NoUsbTrash=true
+ 
+ [Desktop]
+ WallpaperMode=stretch
+-Wallpaper=@LXQT_SHARE_DIR@/themes/frost/lxqt-origami-light.png
++Wallpaper=/usr/share/mdk/backgrounds/default.png
+ BgColor=#000000
+ FgColor=#ffffff
+ ShadowColor=#000000
+@@ -28,6 +31,7 @@
+ MountOnStartup=true
+ MountRemovable=true
+ AutoRun=true
++CloseOnUnmount=true
+ 
+ [FolderView]
+ Mode=icon
