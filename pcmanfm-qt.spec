@@ -1,4 +1,6 @@
 %define git 0
+# lto causes the places to stop working and a constant busy icon
+%define _disable_lto 1
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
@@ -7,7 +9,7 @@ Version:	0.12.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	3
+Release:	4
 Source0:	https://github.com/lxde/pcmanfm-qt/archive/%{version}.tar.gz
 %endif
 License:	LGPLv2.1+
