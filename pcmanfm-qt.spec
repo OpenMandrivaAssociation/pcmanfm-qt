@@ -33,7 +33,6 @@ BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	pkgconfig(libfm-qt) >= 0.12.0
 BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	qmake5
-Requires:	lxqt-l10n
 Suggests:	ark
 Suggests:	lxqt-sudo
 
