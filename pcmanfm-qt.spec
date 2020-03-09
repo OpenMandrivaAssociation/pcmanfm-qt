@@ -7,7 +7,7 @@ Version:	0.14.1
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	https://github.com/lxde/pcmanfm-qt/archive/%{version}.tar.gz
 %endif
 License:	LGPLv2.1+
