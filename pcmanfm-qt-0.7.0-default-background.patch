@@ -1,13 +1,14 @@
---- pcmanfm-qt-0.12.0/pcmanfm/settings.cpp.0002~	2017-11-06 21:47:52.159116770 +0100
-+++ pcmanfm-qt-0.12.0/pcmanfm/settings.cpp	2017-11-06 22:01:04.702017061 +0100
-@@ -212,8 +212,8 @@ bool Settings::loadFile(QString filePath
+diff -up pcmanfm-qt-0.15.0/pcmanfm/settings.cpp.2~ pcmanfm-qt-0.15.0/pcmanfm/settings.cpp
+--- pcmanfm-qt-0.15.0/pcmanfm/settings.cpp.2~	2020-05-13 18:36:15.848700556 +0200
++++ pcmanfm-qt-0.15.0/pcmanfm/settings.cpp	2020-05-13 18:37:20.838629179 +0200
+@@ -230,8 +230,8 @@ bool Settings::loadFile(QString filePath
      settings.endGroup();
  
-     settings.beginGroup("Desktop");
--    wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode").toString());
--    wallpaper_ = settings.value("Wallpaper").toString();
-+    wallpaperMode_ = wallpaperModeFromString(settings.value("WallpaperMode", "fit").toString());
-+    wallpaper_ = settings.value("Wallpaper", "/usr/share/wallpapers/mdk/default.png").toString();
-     lastSlide_ = settings.value("LastSlide").toString();
-     wallpaperDir_ = settings.value("WallpaperDirectory").toString();
-     slideShowInterval_ = settings.value("SlideShowInterval", 0).toInt();
+     settings.beginGroup(QStringLiteral("Desktop"));
+-    wallpaperMode_ = wallpaperModeFromString(settings.value(QStringLiteral("WallpaperMode")).toString());
+-    wallpaper_ = settings.value(QStringLiteral("Wallpaper")).toString();
++    wallpaperMode_ = wallpaperModeFromString(settings.value(QStringLiteral("WallpaperMode"), QStringLiteral("fit")).toString());
++    wallpaper_ = settings.value(QStringLiteral("Wallpaper"), QStringLiteral("/usr/share/wallpapers/mdk/default.png")).toString();
+     wallpaperDialogSize_ = settings.value(QStringLiteral("WallpaperDialogSize"), QSize(700, 500)).toSize();
+     wallpaperDialogSplitterPos_ = settings.value(QStringLiteral("WallpaperDialogSplitterPos"), 200).toInt();
+     lastSlide_ = settings.value(QStringLiteral("LastSlide")).toString();
