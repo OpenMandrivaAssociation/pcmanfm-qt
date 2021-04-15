@@ -2,7 +2,7 @@
 
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.16.0
+Version:	0.17.0
 %if %git
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
