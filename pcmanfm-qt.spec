@@ -1,15 +1,8 @@
-%define git 0
-
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	0.17.0
-%if %git
-Release:	1.%git.1
-Source0:	%{name}-%{git}.tar.xz
-%else
-Release:	1
+Version:	1.0.0
+Release:	%{?git:0.%git.}1
 Source0:	https://github.com/lxqt/pcmanfm-qt/releases/download/%{version}/pcmanfm-qt-%{version}.tar.xz
-%endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
@@ -49,13 +42,7 @@ File manager for the LXQt desktop.
 #----------------------------------------------------------------------------
 
 %prep
-%if %git
-%setup -q -n %{name}-%{git}
-%else
-%setup -q
-%endif
-%autopatch -p1
-
+%autosetup -p1
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
