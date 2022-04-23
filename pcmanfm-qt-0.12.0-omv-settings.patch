@@ -1,13 +1,11 @@
-diff -uraN pcmanfm-qt-0.15.1/config/pcmanfm-qt/lxqt/settings.conf.in omv-pcmanfm-qt-0.15.1/config/pcmanfm-qt/lxqt/settings.conf.in
---- pcmanfm-qt-0.15.1/config/pcmanfm-qt/lxqt/settings.conf.in	2020-05-17 07:31:18.000000000 +0200
-+++ omv-pcmanfm-qt-0.15.1/config/pcmanfm-qt/lxqt/settings.conf.in	2020-05-22 21:46:09.572278860 +0200
-@@ -1,21 +1,26 @@
- [System]
-+FallbackIconThemeName=breeze
+diff -up pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~ pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in
+--- pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~	2022-04-16 02:59:21.000000000 +0200
++++ pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in	2022-04-23 19:37:39.606348922 +0200
+@@ -2,22 +2,25 @@
  IconThemeName=elementary
+ FallbackIconThemeName=breeze
  SuCommand=lxsudo dbus-run-session -- %s
 -TerminalCommand=
-+TemplateRunApp=false
  Archiver=lxqt-archiver
  SIUnit=false
 -TerminalDirCommand=xterm
@@ -26,13 +24,14 @@ diff -uraN pcmanfm-qt-0.15.1/config/pcmanfm-qt/lxqt/settings.conf.in omv-pcmanfm
 +NoUsbTrash=true
  
  [Desktop]
+ DesktopShortcuts=Home, Trash, Computer, Network
  WallpaperMode=stretch
--Wallpaper=@LXQT_SHARE_DIR@/themes/frost/lxqt-origami-light.png
+-Wallpaper=@LXQT_SHARE_DIR@/wallpapers/waves-logo.png
 +Wallpaper=/usr/share/mdk/backgrounds/default.png
  BgColor=#000000
  FgColor=#ffffff
  ShadowColor=#000000
-@@ -28,6 +33,7 @@
+@@ -30,6 +33,7 @@ Font="Sans Serif,12,-1,5,50,0,0,0,0,0"
  MountOnStartup=true
  MountRemovable=true
  AutoRun=true
