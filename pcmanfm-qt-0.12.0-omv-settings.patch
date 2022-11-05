@@ -1,28 +1,7 @@
-diff -up pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~ pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in
---- pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~	2022-04-16 02:59:21.000000000 +0200
-+++ pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in	2022-04-23 19:37:39.606348922 +0200
-@@ -2,22 +2,25 @@
- IconThemeName=elementary
- FallbackIconThemeName=breeze
- SuCommand=lxsudo dbus-run-session -- %s
--TerminalCommand=
- Archiver=lxqt-archiver
- SIUnit=false
--TerminalDirCommand=xterm
--TerminalExecCommand=xterm -e %s
-+Terminal=qterminal
-+TerminalCommand=qterminal
-+TerminalDirCommand=qterminal
-+TerminalExecCommand=qterminal -e %s
- 
- [Behavior]
- BookmarkOpenMethod=0
- UseTrash=true
- SingleClick=false
- ConfirmDelete=true
-+ConfirmTrash=true
-+NoUsbTrash=true
- 
+diff -up pcmanfm-qt-1.2.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~ pcmanfm-qt-1.2.0/config/pcmanfm-qt/lxqt/settings.conf.in
+--- pcmanfm-qt-1.2.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~	2022-11-05 09:07:39.000000000 +0100
++++ pcmanfm-qt-1.2.0/config/pcmanfm-qt/lxqt/settings.conf.in	2022-11-05 19:39:20.661558071 +0100
+@@ -15,7 +15,7 @@ ConfirmDelete=true
  [Desktop]
  DesktopShortcuts=Home, Trash, Computer, Network
  WallpaperMode=stretch
@@ -31,7 +10,7 @@ diff -up pcmanfm-qt-1.1.0/config/pcmanfm-qt/lxqt/settings.conf.in.1~ pcmanfm-qt-
  BgColor=#000000
  FgColor=#ffffff
  ShadowColor=#000000
-@@ -30,6 +33,7 @@ Font="Sans Serif,12,-1,5,50,0,0,0,0,0"
+@@ -28,6 +28,7 @@ Font="Sans Serif,12,-1,5,50,0,0,0,0,0"
  MountOnStartup=true
  MountRemovable=true
  AutoRun=true
