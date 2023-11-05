@@ -1,6 +1,6 @@
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
-Version:	1.3.0
+Version:	1.4.0
 Release:	%{?git:1.%git.}1
 Source0:	https://github.com/lxqt/pcmanfm-qt/releases/download/%{version}/pcmanfm-qt-%{version}.tar.xz
 License:	LGPLv2.1+
@@ -38,6 +38,7 @@ File manager for the LXQt desktop.
 %{_datadir}/pcmanfm-qt
 %{_mandir}/man1/pcmanfm-qt.1*
 %{_sysconfdir}/xdg/autostart/lxqt-desktop.desktop
+%{_datadir}/icons/hicolor/*/apps/pcmanfm-qt.*
 
 #----------------------------------------------------------------------------
 
