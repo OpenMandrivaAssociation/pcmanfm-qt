@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(xcb)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(LayerShellQt)
 BuildRequires:	pkgconfig(libfm-qt6) >= 0.12.0
 BuildRequires:	cmake(lxqt2-build-tools)
 Suggests:	ark
