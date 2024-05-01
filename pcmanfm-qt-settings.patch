@@ -1,0 +1,44 @@
+diff -up pcmanfm-qt-2.0.0/pcmanfm/settings.cpp.omv~ pcmanfm-qt-2.0.0/pcmanfm/settings.cpp
+--- pcmanfm-qt-2.0.0/pcmanfm/settings.cpp.omv~	2024-05-02 00:03:51.195665825 +0200
++++ pcmanfm-qt-2.0.0/pcmanfm/settings.cpp	2024-05-02 00:05:39.684711471 +0200
+@@ -205,11 +205,11 @@ bool Settings::save(QString profile) {
+ bool Settings::loadFile(QString filePath) {
+     QSettings settings(filePath, QSettings::IniFormat);
+     settings.beginGroup(QStringLiteral("System"));
+-    fallbackIconThemeName_ = settings.value(QStringLiteral("FallbackIconThemeName")).toString();
++    fallbackIconThemeName_ = settings.value(QStringLiteral("FallbackIconThemeName"), QStringLiteral("breeze")).toString();
+     if(fallbackIconThemeName_.isEmpty()) {
+         // FIXME: we should choose one from installed icon themes or get
+         // the value from XSETTINGS instead of hard code a fallback value.
+-        fallbackIconThemeName_ = QLatin1String("oxygen"); // fallback icon theme name
++        fallbackIconThemeName_ = QLatin1String("breeze"); // fallback icon theme name
+     }
+     suCommand_ = settings.value(QStringLiteral("SuCommand"), QStringLiteral("lxqt-sudo %s")).toString();
+     setTerminal(settings.value(QStringLiteral("Terminal"), QStringLiteral("xterm")).toString());
+@@ -227,7 +227,7 @@ bool Settings::loadFile(QString filePath
+     bookmarkOpenMethod_ = bookmarkOpenMethodFromString(settings.value(QStringLiteral("BookmarkOpenMethod")).toString());
+     // settings for use with libfm
+     useTrash_ = settings.value(QStringLiteral("UseTrash"), true).toBool();
+-    singleClick_ = settings.value(QStringLiteral("SingleClick"), false).toBool();
++    singleClick_ = settings.value(QStringLiteral("SingleClick"), true).toBool();
+     autoSelectionDelay_ = settings.value(QStringLiteral("AutoSelectionDelay"), 600).toInt();
+     ctrlRightClick_ = settings.value(QStringLiteral("CtrlRightClick"), false).toBool();
+     confirmDelete_ = settings.value(QStringLiteral("ConfirmDelete"), true).toBool();
+@@ -253,7 +253,7 @@ bool Settings::loadFile(QString filePath
+     desktopFgColor_ = QColor::fromString(settings.value(QStringLiteral("FgColor"), QStringLiteral("#ffffff")).toString());
+     desktopShadowColor_ = QColor::fromString(settings.value(QStringLiteral("ShadowColor"), QStringLiteral("#000000")).toString());
+     if(settings.contains(QStringLiteral("Font"))) {
+-        desktopFont_.fromString(settings.value(QStringLiteral("Font")).toString());
++        desktopFont_.fromString(settings.value(QStringLiteral("Font"), QStringLiteral("Noto Sans,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular")).toString());
+     }
+     else {
+         desktopFont_ = QApplication::font();
+@@ -304,7 +304,7 @@ bool Settings::loadFile(QString filePath
+     sortFolderFirst_ = settings.value(QStringLiteral("SortFolderFirst"), true).toBool();
+     sortHiddenLast_ = settings.value(QStringLiteral("SortHiddenLast"), false).toBool();
+     sortCaseSensitive_ = settings.value(QStringLiteral("SortCaseSensitive"), false).toBool();
+-    showFilter_ = settings.value(QStringLiteral("ShowFilter"), false).toBool();
++    showFilter_ = settings.value(QStringLiteral("ShowFilter"), true).toBool();
+ 
+     setBackupAsHidden(settings.value(QStringLiteral("BackupAsHidden"), false).toBool());
+     showFullNames_ = settings.value(QStringLiteral("ShowFullNames"), true).toBool();
