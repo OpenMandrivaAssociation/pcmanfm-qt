@@ -5,7 +5,7 @@ Release:	%{?git:0.%git.}4
 Source0:	https://github.com/lxqt/pcmanfm-qt/releases/download/%{version}/pcmanfm-qt-%{version}.tar.xz
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
-Url:		http://lxqt.org
+Url:		https://lxqt.org
 Patch0:		pcmanfm-qt-0.12.0-omv-settings.patch
 Patch1:		pcmanfm-qt-0.7.0-default-background.patch
 Patch2:		pcmanfm-qt-settings.patch
