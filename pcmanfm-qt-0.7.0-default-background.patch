@@ -1,10 +1,10 @@
-diff -up pcmanfm-qt-0.15.0/pcmanfm/settings.cpp.2~ pcmanfm-qt-0.15.0/pcmanfm/settings.cpp
---- pcmanfm-qt-0.15.0/pcmanfm/settings.cpp.2~	2020-05-13 18:36:15.848700556 +0200
-+++ pcmanfm-qt-0.15.0/pcmanfm/settings.cpp	2020-05-13 18:37:20.838629179 +0200
-@@ -230,8 +230,8 @@ bool Settings::loadFile(QString filePath
-     settings.endGroup();
- 
+diff -up pcmanfm-qt-2.4.0/pcmanfm/settings.cpp.2~ pcmanfm-qt-2.4.0/pcmanfm/settings.cpp
+--- pcmanfm-qt-2.4.0/pcmanfm/settings.cpp.2~	2026-04-20 00:00:00.000000000 +0000
++++ pcmanfm-qt-2.4.0/pcmanfm/settings.cpp	2026-04-20 00:00:00.000000000 +0000
+@@ -244,8 +244,8 @@ bool Settings::loadFile(QString filePath
      settings.beginGroup(QStringLiteral("Desktop"));
+     screenNames_ = settings.value(QStringLiteral("ScreenNames")).toStringList();
+     screenNames_.removeDuplicates();
 -    wallpaperMode_ = wallpaperModeFromString(settings.value(QStringLiteral("WallpaperMode")).toString());
 -    wallpaper_ = settings.value(QStringLiteral("Wallpaper")).toString();
 +    wallpaperMode_ = wallpaperModeFromString(settings.value(QStringLiteral("WallpaperMode"), QStringLiteral("fit")).toString());
