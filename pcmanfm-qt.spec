@@ -1,7 +1,7 @@
 Summary:	File manager for the LXQt desktop
 Name:		pcmanfm-qt
 Version:	2.4.0
-Release:	%{?git:0.%git.}1
+Release:	%{?git:0.%git.}2
 Source0:	https://github.com/lxqt/pcmanfm-qt/releases/download/%{version}/pcmanfm-qt-%{version}.tar.xz
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(libfm-extra)
 BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(lxqt)
 BuildRequires:	pkgconfig(x11)
-BuildRequires:  pkgconfig(xcb)
+BuildRequires: pkgconfig(xcb)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6LinguistTools)
@@ -28,8 +28,6 @@ BuildRequires:	pkgconfig(libfm-qt6) >= 0.12.0
 BuildRequires:	cmake(lxqt2-build-tools)
 Suggests:	ark
 Suggests:	lxqt-sudo
-
-Requires: gvfs
 
 %description
 File manager for the LXQt desktop.
