@@ -9,6 +9,7 @@ Url:		https://lxqt.org
 Patch0:		pcmanfm-qt-0.12.0-omv-settings.patch
 Patch1:		pcmanfm-qt-0.7.0-default-background.patch
 Patch2:		pcmanfm-qt-settings.patch
+Patch3:		pcmanfm-qt-2.5.0-link-xcb.patch
 BuildSystem:	cmake
 BuildOption:	-DPULL_TRANSLATIONS:BOOL=OFF
 BuildRequires:	pkgconfig(gio-2.0)

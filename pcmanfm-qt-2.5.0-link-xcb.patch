@@ -1,0 +1,10 @@
+--- pcmanfm-qt-2.5.0/pcmanfm/CMakeLists.txt	2026-11-03 14:04:39.000000000 +0100
++++ pcmanfm-qt-2.5.0/pcmanfm/CMakeLists.txt	2026-11-03 21:44:36.833851706 +0100
+@@ -92,6 +92,7 @@ target_link_libraries(pcmanfm-qt
+     Qt6::DBus
+     LayerShellQtInterface
+     fm-qt6
++    xcb
+ )
+ 
+ install(TARGETS pcmanfm-qt RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
